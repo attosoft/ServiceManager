@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.1"
     defaultConfig {
         applicationId "com.github.attosoft.servicemanager"
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -26,6 +26,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation project(":serviceLib")
-//    implementation 'com.github.attosoft:ServiceManager:v1.0.4'
+//    implementation project(":serviceLib")
+    implementation 'com.github.attosoft:ServiceManager:master-SNAPSHOT'
 }
