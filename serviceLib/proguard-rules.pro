@@ -19,6 +19,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep interface com.id0755.android.service.base.IProguard
--dontwarn com.id0755.android.service.base.IProguard
--keep class * implements com.id0755.android.service.base.IProguard { *;}
+-keep interface com.github.attosoft.service.IProguard
+-dontwarn com.github.attosoft.service.IProguard
+-keep class * implements com.github.attosoft.service.IProguard { *;}

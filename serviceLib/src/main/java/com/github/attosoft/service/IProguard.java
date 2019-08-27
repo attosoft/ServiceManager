@@ -1,4 +1,4 @@
-package com.id0755.android.service.base;
+package com.github.attosoft.service;
 
 /**
  * @author andy 不混淆
