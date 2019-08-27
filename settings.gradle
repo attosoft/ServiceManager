@@ -1,1 +1,1 @@
-include ':app',':serviceLib'
+include ':serviceLib'
