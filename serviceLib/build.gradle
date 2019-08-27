@@ -1,26 +1,22 @@
-if (isRunAlone.toBoolean()){
-    apply plugin: 'com.android.application'
-}else {
-    apply plugin: 'com.android.library'
-}
+apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.attosoft'
 
 android {
-    if (isRunAlone.toBoolean()) {
-        compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
-        buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
-    }else {
-        compileSdkVersion 28
-        buildToolsVersion "28.0.3"
-    }
+//    if (isRunAlone.toBoolean()) {
+//        compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+//        buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+//    }else {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+//    }
     defaultConfig {
         versionCode 1
         versionName "1.0"
-        if (isRunAlone.toBoolean()) {
-            minSdkVersion 1
-            targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION
-        }
+//        if (isRunAlone.toBoolean()) {
+        minSdkVersion 15
+        targetSdkVersion 26
+//            targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION
+//        }
     }
 
     buildTypes {
@@ -31,35 +27,35 @@ android {
     }
 
 }
-// type显示指定任务类型或任务, 这里指定要执行Javadoc这个task,这个task在gradle中已经定义
-task androidJavadocs(type: Javadoc) {
-    // 设置源码所在的位置
-    source = android.sourceSets.main.java.sourceFiles
-}
-
-// 生成javadoc.jar
-task androidJavadocsJar(type: Jar) {
-    // 指定文档名称
-    classifier = 'javadoc'
-    from androidJavadocs.destinationDir
-}
-
-// 生成sources.jar
-task androidSourcesJar(type: Jar) {
-    classifier = 'sources'
-    from android.sourceSets.main.java.sourceFiles
-}
-
-task classesJar(type: Jar) {
-    from "$buildDir/intermediates/classes/release"
-}
-
-// 产生相关配置文件的任务
-artifacts {
-    archives classesJar
-    archives androidSourcesJar
-    archives androidJavadocsJar
-}
+//// type显示指定任务类型或任务, 这里指定要执行Javadoc这个task,这个task在gradle中已经定义
+//task androidJavadocs(type: Javadoc) {
+//    // 设置源码所在的位置
+//    source = android.sourceSets.main.java.sourceFiles
+//}
+//
+//// 生成javadoc.jar
+//task androidJavadocsJar(type: Jar) {
+//    // 指定文档名称
+//    classifier = 'javadoc'
+//    from androidJavadocs.destinationDir
+//}
+//
+//// 生成sources.jar
+//task androidSourcesJar(type: Jar) {
+//    classifier = 'sources'
+//    from android.sourceSets.main.java.sourceFiles
+//}
+//
+//task classesJar(type: Jar) {
+//    from "$buildDir/intermediates/classes/release"
+//}
+//
+//// 产生相关配置文件的任务
+//artifacts {
+//    archives classesJar
+//    archives androidSourcesJar
+//    archives androidJavadocsJar
+//}
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     compileOnly 'com.android.support:appcompat-v7:28.0.0'
