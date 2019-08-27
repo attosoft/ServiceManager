@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 
-import androidx.annotation.NonNull;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +14,7 @@ public final class ManifestParser {
     private final static String TAG = ManifestParser.class.getSimpleName();
     private final Context context;
 
-    public ManifestParser(@NonNull Context context) {
+    public ManifestParser(Context context) {
         this.context = context;
     }
 
